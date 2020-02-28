@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e00d48b0-fa1c-4d36-b0ec-8e9996b257cc" name="Default Changelist" comment="" />
+    <list default="true" id="e00d48b0-fa1c-4d36-b0ec-8e9996b257cc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YQJwfjppMnRUXWpUWJ0sLNm3cZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -16,7 +22,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -32,10 +38,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="242" y="98" key="SettingsEditor" timestamp="1582869293150">
+    <state x="606" y="358" width="284" height="210" key="Github.ShareDialog" timestamp="1582870657438">
       <screen x="67" y="27" width="1373" height="873" />
     </state>
-    <state x="242" y="98" key="SettingsEditor/67.27.1373.873@67.27.1373.873" timestamp="1582869293150" />
+    <state x="606" y="358" width="284" height="210" key="Github.ShareDialog/67.27.1373.873@67.27.1373.873" timestamp="1582870657438" />
+    <state x="242" y="98" key="SettingsEditor" timestamp="1582870531579">
+      <screen x="67" y="27" width="1373" height="873" />
+    </state>
+    <state x="242" y="98" key="SettingsEditor/67.27.1373.873@67.27.1373.873" timestamp="1582870531579" />
     <state x="409" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1582869154262">
       <screen x="67" y="27" width="1373" height="873" />
     </state>
