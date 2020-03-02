@@ -132,129 +132,17 @@
                                     <li>
                                         <a href="#"><i class="fa fa-th"></i> Categories</a>
                                         <ul class="dropdown-menu-item">
+                                             {% for Course in object_list %}
                                             <li>
                                                 <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">ABACUS</a>
+                                                <a href="course-grid.html">{{Course.category}}</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                    <li><a href="#">Level 3</a></li>
-                                                    <li><a href="#">Level 4</a></li>
-                                                    <li><a href="#">Level 5</a></li>
-                                                    <li><a href="#">Level 6</a></li>
-                                                    <li><a href="#">Level 7</a></li>
-                                                    <li><a href="#">Level 8</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Vedic Mathematics</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                    <li><a href="#">Level 3</a></li>
-                                                    <li><a href="#">Level 4</a></li>
-                                                    <li><a href="#">Level 5</a></li>
-                                                    <li><a href="#">Level 6</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Quick Maths</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                    <li><a href="#">Level 3</a></li>
-                                                    <li><a href="#">Level 4</a></li>
-                                                    <li><a href="#">Level 5</a></li>
-                                                    <li><a href="#">Level 6</a></li>
-                                                </ul>
-                                            </li>
-                                             <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Artificial Intelligence</a>
-                                                <ul class="sub-menu">
-                                                     <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                     <li><a href="#">Level 3</a></li>
-                                                    <li><a href="#">Level 4</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">ROBOTICS</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#">Foundation Level</a></li>
-                                                    <li><a href="#">Basic Level</a></li>
-                                                    <li><a href="#">Intermediate Level</a></li>
-                                                    <li><a href="#">Advanced Level</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Electrical & Electronics Club</a>
-                                                 <ul class="sub-menu">
-                                                    <li><a href="#">Foundation Level</a></li>
-                                                    <li><a href="#">Basic Level</a></li>
-                                                    <li><a href="#">Intermediate Level</a></li>
-                                                    <li><a href="#">Advanced Level</a></li>
-                                                </ul>
-                                            </li>
+                                                    <li><a href="#">{{Course.label2}}</a></li>
 
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Math CLub</a>
-                                                 <ul class="sub-menu">
-                                                    <li><a href="#">Foundation Level</a></li>
-                                                    <li><a href="#">Basic Level</a></li>
-                                                    <li><a href="#">Intermediate Level</a></li>
-                                                    <li><a href="#">Advanced Level</a></li>
                                                 </ul>
                                             </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Science Club</a>
-                                                 <ul class="sub-menu">
-                                                    <li><a href="#">Foundation Level</a></li>
-                                                    <li><a href="#">Basic Level</a></li>
-                                                    <li><a href="#">Intermediate Level</a></li>
-                                                    <li><a href="#">Advanced Level</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">English Club</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="#">Foundation Level</a></li>
-                                                    <li><a href="#">Basic Level</a></li>
-                                                    <li><a href="#">Intermediate Level</a></li>
-                                                    <li><a href="#">Advanced Level</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Unplug Coding</a>
-                                                <ul class="sub-menu">
-                                                      <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Python Coding</a>
-                                                <ul class="sub-menu">
-                                                      <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">Cyber Literacy</a>
-                                                <ul class="sub-menu">
-                                                      <li><a href="#">Level 1</a></li>
-                                                    <li><a href="#">Level 2</a></li>
-                                                </ul>
-                                            </li>
+                                            {% endfor %}
+
                                         </ul>
                                     </li>
                                 </ul>
@@ -415,9 +303,9 @@
 ======================================-->
 
 
+
    {% block content %}
     {% endblock content %}
 
-    {% include "home.html" %}
     {% include "footer.html" %}
 
