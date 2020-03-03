@@ -1,5 +1,51 @@
 from django.db import models
 from django.shortcuts import reverse
+from django.utils.text import slugify
+from django.db.models.signals import pre_save
+
+
+LEVEL_CHOICES = (
+    ('Level 1', 'Level 1'),
+    ('Level 2', 'Level 2'),
+    ('Level 3', 'Level 3'),
+    ('Level 4', 'Level 4'),
+    ('Level 5', 'Level 5'),
+    ('Level 6', 'Level 6'),
+    ('Level 6', 'Level 7'),
+    ('Level 8', 'Level 8')
+)
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=100)
+    level = models.CharField(choices=LEVEL_CHOICES, max_length=10)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("app:course", kwargs={
+            'slug': self.slug
+        })
+
+    # def create_slug(instance, new_slug=None):
+    #     slug = slugify(instance.titile)
+    #
+    #     if new_slug is not None:
+    #         slug = new_slug
+    #         qs = Course.objects.filter(slug=slug).order_by("-id")
+    #         exists =qs.exists()
+    #         if exists:
+    #             new_slug = "%s-%s"%(slug, qs.first().id)
+    #             return create_slug(instance, new_slug=new_slug)
+    #         return slug
+    #
+    #     def pre_save_course_receiver(sender, instance, *args, **kwargs):
+    #         if not instance.slug:
+    #             instance.slug = create_slug(instance)
+    # pre_save.connect(pre_save_course_receiver, Course)
+
 
 CATEGORY_CHOICES = (
     ('Abacus', 'Abacus'),
@@ -40,34 +86,33 @@ class Course(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=30)
     label1 = models.CharField(choices=LABEL1_CHOICES, max_length=20)
     label2 = models.CharField(choices=LABEL2_CHOICES, max_length=20)
-
-    def __str__(self):
-        return self.title
-
-
-LEVEL_CHOICES = (
-    ('Level 1', 'Level 1'),
-    ('Level 2', 'Level 2'),
-    ('Level 3', 'Level 3'),
-    ('Level 4', 'Level 4'),
-    ('Level 5', 'Level 5'),
-    ('Level 6', 'Level 6'),
-    ('Level 6', 'Level 7'),
-    ('Level 8', 'Level 8')
-)
-
-
-class Category(models.Model):
-    title = models.CharField(max_length=100)
-    level = models.CharField(choices=LEVEL_CHOICES, max_length=10)
     slug = models.SlugField()
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("core:category", kwargs={
+        return reverse("app:course-detail", kwargs={
             'slug': self.slug
         })
+
+
+class CourseDetail(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    price = models.FloatField()
+    category = models.CharField(choices=CATEGORY_CHOICES, max_length=30)
+    label1 = models.CharField(choices=LABEL1_CHOICES, max_length=20)
+    label2 = models.CharField(choices=LABEL2_CHOICES, max_length=20)
+    description = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.title
+
+
+
+
+
+
 
 

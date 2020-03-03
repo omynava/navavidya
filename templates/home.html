@@ -146,13 +146,13 @@
             </div><!-- end col-lg-3 -->
         </div><!-- end row -->
         <div class="row category-wrapper">
-            {% for Category in object_list %}
+            {% for category in object_list %}
             <div class="col-lg-3">
                 <div class="category-item">
                     <img src="{% static 'images/img1.jpg' %}" alt="">
                     <div class="category-content">
-                        <h3 class="cat__title">{{Category.title}}</h3>
-                        <p class="cat__meta">{{Category.level}}</p>
+                        <h3 class="cat__title">{{category.title}}</h3>
+                        <p class="cat__meta">{{category.level}}</p>
                         <a href="{{ category.get_absolute_url }}" class="cat__link">explore now</a>
                     </div><!-- end category-content -->
                 </div><!-- end category-item -->

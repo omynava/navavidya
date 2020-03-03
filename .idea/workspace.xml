@@ -8,9 +8,9 @@
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course-grid.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course-grid.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +72,23 @@
       <screen x="67" y="27" width="1373" height="873" />
     </state>
     <state x="606" y="358" width="284" height="210" key="Github.ShareDialog/67.27.1373.873@67.27.1373.873" timestamp="1582870657438" />
-    <state x="242" y="98" key="SettingsEditor" timestamp="1582892371797">
-      <screen x="67" y="27" width="1373" height="873" />
+    <state x="184" y="95" key="SettingsEditor" timestamp="1583137906523">
+      <screen x="0" y="27" width="1440" height="836" />
     </state>
+    <state x="184" y="95" key="SettingsEditor/0.27.1440.836@0.27.1440.836" timestamp="1583137906523" />
     <state x="242" y="98" key="SettingsEditor/67.27.1373.873@67.27.1373.873" timestamp="1582892371797" />
-    <state x="348" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1582892485540">
-      <screen x="67" y="27" width="1373" height="873" />
+    <state x="295" y="191" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1583137938953">
+      <screen x="0" y="27" width="1440" height="836" />
     </state>
+    <state x="295" y="191" key="Vcs.Push.Dialog.v2/0.27.1440.836@0.27.1440.836" timestamp="1583137938953" />
     <state x="348" y="198" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1373.873@67.27.1373.873" timestamp="1582892485540" />
     <state x="409" y="291" key="com.intellij.ide.util.TipDialog" timestamp="1582869154262">
       <screen x="67" y="27" width="1373" height="873" />
     </state>
     <state x="409" y="291" key="com.intellij.ide.util.TipDialog/67.27.1373.873@67.27.1373.873" timestamp="1582869154262" />
+    <state x="383" y="184" width="672" height="678" key="search.everywhere.popup" timestamp="1583219994455">
+      <screen x="0" y="27" width="1440" height="836" />
+    </state>
+    <state x="383" y="184" width="672" height="678" key="search.everywhere.popup/0.27.1440.836@0.27.1440.836" timestamp="1583219994455" />
   </component>
 </project>
