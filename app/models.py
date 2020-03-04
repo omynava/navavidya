@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
+from django.conf import settings
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 
@@ -26,6 +27,11 @@ class Category(models.Model):
 
     def get_absolute_url(self):
         return reverse("app:course", kwargs={
+            'slug': self.slug
+        })
+
+    def get_add_to_cart_url(self):
+        return reverse("core:add-to-cart", kwargs={
             'slug': self.slug
         })
 
@@ -83,6 +89,7 @@ class Course(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     price = models.FloatField()
+    discount_price = models.FloatField(blank=True, null=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=30)
     label1 = models.CharField(choices=LABEL1_CHOICES, max_length=20)
     label2 = models.CharField(choices=LABEL2_CHOICES, max_length=20)
@@ -97,20 +104,51 @@ class Course(models.Model):
         })
 
 
-class CourseDetail(models.Model):
-    title = models.CharField(max_length=100)
-    author = models.CharField(max_length=100)
-    price = models.FloatField()
-    category = models.CharField(choices=CATEGORY_CHOICES, max_length=30)
-    label1 = models.CharField(choices=LABEL1_CHOICES, max_length=20)
-    label2 = models.CharField(choices=LABEL2_CHOICES, max_length=20)
-    description = models.TextField(max_length=200)
+class OrderCourse(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    ordered = models.BooleanField(default=False)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=1)
 
     def __str__(self):
-        return self.title
+        return f"{self.quantity} of {self.course.title}"
+
+    def get_total_course_price(self):
+        return self.quantity * self.course.price
+
+    def get_total_discount_course_price(self):
+        return self.quantity * self.course.discount_price
+
+    def get_amount_saved(self):
+        return self.get_total_course_price() - self.get_total_discount_course_price()
+
+    def get_final_price(self):
+        if self.course.discount_price:
+            return self.get_total_discount_course_price()
+        return self.get_total_course_price()
 
 
-
+class Order(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    ref_code = models.CharField(max_length=20, blank=True, null=True)
+    course = models.ManyToManyField(OrderCourse)
+    start_date = models.DateTimeField(auto_now_add=True)
+    ordered_date = models.DateTimeField()
+    ordered = models.BooleanField(default=False)
+    # shipping_address = models.ForeignKey(
+    #     'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
+    # billing_address = models.ForeignKey(
+    #     'Address', related_name='billing_address', on_delete=models.SET_NULL, blank=True, null=True)
+    # payment = models.ForeignKey(
+    #     'Payment', on_delete=models.SET_NULL, blank=True, null=True)
+    # coupon = models.ForeignKey(
+    #     'Coupon', on_delete=models.SET_NULL, blank=True, null=True)
+    # being_delivered = models.BooleanField(default=False)
+    # received = models.BooleanField(default=False)
+    # refund_requested = models.BooleanField(default=False)
+    # refund_granted = models.BooleanField(default=False)
 
 
 

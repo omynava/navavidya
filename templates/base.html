@@ -132,12 +132,12 @@
                                     <li>
                                         <a href="#"><i class="fa fa-th"></i> Categories</a>
                                         <ul class="dropdown-menu-item">
-                                             {% for Course in object_list %}
+                                             {% for Category in object_list %}
                                             <li>
                                                 <span class="la la-angle-right menu-collapse"></span>
-                                                <a href="course-grid.html">{{Course.category}}</a>
+                                                <a href="course-grid.html">{{Category.category}}</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="#">{{Course.label2}}</a></li>
+                                                    <li><a href="#">{{Category.label2}}</a></li>
 
                                                 </ul>
                                             </li>
