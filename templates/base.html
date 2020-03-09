@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <html lang="en">
@@ -7,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Navavidya || Home</title>
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}
+    {% endblock %}
 
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,200,300,400,500,600,700&amp;display=swap" rel="stylesheet">
@@ -66,11 +69,13 @@
                                     <li><a href="https://in.pinterest.com/navavisionbangalore/"><i class="fa fa-pinterest"></i></a></li>
                                 </ul>
                             </div>
+
+                            {% if request.user.is_authenticated %}
                             <div class="header-right-info d-flex align-items-center">
                                 <ul class="user-cart d-flex align-items-center ">
                                     <li>
                                         <span class="la la-shopping-cart user-cart-btn"></span>
-                                      <!--  <ul class="dropdown-menu-item shopping-cart-list">
+                                       <ul class="dropdown-menu-item shopping-cart-list">
                                             <li>
                                                 <div class="cart-item">
                                                     <img src="images/small-img.jpg" alt="product">
@@ -107,14 +112,18 @@
                                                     <a class="theme-btn" href="shopping-cart.html">go to Cart</a>
                                                 </div>
                                             </li>
-                                        </ul>-->
+                                        </ul>
                                     </li>
+                                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
                                 </ul>
+                                {% else %}
                                 <ul class="user-action d-flex align-items-center">
-                                    <li><a href="{% static 'login.html' %}">Login</a></li>
+                                    <li><a href="{% url 'account_login' %}">Login</a></li>
                                     <li><span>or</span></li>
-                                    <li><a href="{% static 'sign-up.html' %}">Register</a></li>
+                                    <li><a href="{% url 'account_signup' %}">Register</a></li>
+
                                 </ul>
+                                {% endif %}
                             </div>
                         </div><!-- end header-widget -->
                     </div><!-- end col-lg-6 -->
@@ -302,10 +311,22 @@
         END HEADER AREA
 ======================================-->
 
-
+ {% if messages %}
+    <div>
+      <strong>Messages:</strong>
+      <ul>
+        {% for message in messages %}
+        <li>{{message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
    {% block content %}
     {% endblock content %}
 
+
+    {% block extra_body %}
+    {% endblock %}
     {% include "footer.html" %}
 

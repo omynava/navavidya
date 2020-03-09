@@ -30,10 +30,7 @@ class Category(models.Model):
             'slug': self.slug
         })
 
-    def get_add_to_cart_url(self):
-        return reverse("core:add-to-cart", kwargs={
-            'slug': self.slug
-        })
+
 
     # def create_slug(instance, new_slug=None):
     #     slug = slugify(instance.titile)
@@ -103,6 +100,11 @@ class Course(models.Model):
             'slug': self.slug
         })
 
+    def get_add_to_cart_url(self):
+        return reverse("app:add-to-cart", kwargs={
+            'slug': self.slug
+        })
+
 
 class OrderCourse(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -114,41 +116,15 @@ class OrderCourse(models.Model):
     def __str__(self):
         return f"{self.quantity} of {self.course.title}"
 
-    def get_total_course_price(self):
-        return self.quantity * self.course.price
-
-    def get_total_discount_course_price(self):
-        return self.quantity * self.course.discount_price
-
-    def get_amount_saved(self):
-        return self.get_total_course_price() - self.get_total_discount_course_price()
-
-    def get_final_price(self):
-        if self.course.discount_price:
-            return self.get_total_discount_course_price()
-        return self.get_total_course_price()
-
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
-    ref_code = models.CharField(max_length=20, blank=True, null=True)
     course = models.ManyToManyField(OrderCourse)
     start_date = models.DateTimeField(auto_now_add=True)
     ordered_date = models.DateTimeField()
     ordered = models.BooleanField(default=False)
-    # shipping_address = models.ForeignKey(
-    #     'Address', related_name='shipping_address', on_delete=models.SET_NULL, blank=True, null=True)
-    # billing_address = models.ForeignKey(
-    #     'Address', related_name='billing_address', on_delete=models.SET_NULL, blank=True, null=True)
-    # payment = models.ForeignKey(
-    #     'Payment', on_delete=models.SET_NULL, blank=True, null=True)
-    # coupon = models.ForeignKey(
-    #     'Coupon', on_delete=models.SET_NULL, blank=True, null=True)
-    # being_delivered = models.BooleanField(default=False)
-    # received = models.BooleanField(default=False)
-    # refund_requested = models.BooleanField(default=False)
-    # refund_granted = models.BooleanField(default=False)
+
 
 
 

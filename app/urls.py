@@ -8,6 +8,5 @@ urlpatterns = [
     path('course/<slug>/', CourseView.as_view(), name='course'),
     path('course-detail/<slug>/', CourseDetailView.as_view(), name='course-detail'),
     path('add-to-cart/<slug>/', add_to_cart, name='add-to-cart')
-
 ]
 
