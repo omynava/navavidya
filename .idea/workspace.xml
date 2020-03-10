@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e00d48b0-fa1c-4d36-b0ec-8e9996b257cc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navavidya/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/navavidya/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/logout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/logout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/password_reset.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/password_reset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/signup.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
