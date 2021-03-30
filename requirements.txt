@@ -11,7 +11,7 @@ cupshelpers==1.0
 defer==1.0.6
 defusedxml==0.6.0
 distro-info===0.18ubuntu0.18.04.1
-Django==3.0.3
+Django==3.0.12
 django-allauth==0.41.0
 django-countries==5.3.3
 django-crispy-forms==1.9.0
